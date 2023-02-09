@@ -22,6 +22,7 @@ def get_row_iterator(iterable, options=None):
         delimiter=options.get("delimiter", ","),
     )
 
+
     headers = set(reader.fieldnames)
     if options.get("key_properties"):
         key_properties = set(options["key_properties"])
