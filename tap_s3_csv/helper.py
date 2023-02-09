@@ -28,7 +28,7 @@ def get_row_iterator(iterable, options=None):
 
     headers = set(reader.fieldnames)
     LOGGER.info("***************")
-    LOGGER.info(headers)
+    LOGGER.info("headers: %s", headers)
     if options.get("key_properties"):
         key_properties = set(options["key_properties"])
         if not key_properties.issubset(headers):
