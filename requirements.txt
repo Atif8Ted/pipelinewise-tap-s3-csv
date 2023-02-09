@@ -1,0 +1,6 @@
+boto3~=1.26.21
+ujson~=5.4.0
+botocore~=1.29.67
+setuptools~=65.0.2
+backoff~=1.10.0
+voluptuous~=0.13.1
