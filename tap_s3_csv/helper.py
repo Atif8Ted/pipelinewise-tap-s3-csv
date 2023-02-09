@@ -19,7 +19,6 @@ def get_row_iterator(iterable, options=None):
     LOGGER.info("***************")
     x = (line.replace("\0", "") for line in file_stream)
     LOGGER.info(x)
-    LOGGER.info(iterable)
     reader = csv.DictReader(
         (line.replace("\0", "") for line in file_stream),
         fieldnames=None,
