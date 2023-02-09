@@ -17,7 +17,8 @@ def get_row_iterator(iterable, options=None):
     # Replace any NULL bytes in the line given to the DictReader
     # Replace any NULL bytes in the line given to the DictReader
     LOGGER.info("***************")
-    LOGGER.info(file_stream)
+    x = (line.replace("\0", "") for line in file_stream)
+    LOGGER.info(x)
     LOGGER.info(iterable)
     reader = csv.DictReader(
         (line.replace("\0", "") for line in file_stream),
