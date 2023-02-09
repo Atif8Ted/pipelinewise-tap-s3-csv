@@ -14,7 +14,7 @@ from botocore.exceptions import ClientError
 from singer_encodings.csv import  SDC_EXTRA_COLUMN  # pylint:disable=no-name-in-module
 from singer import get_logger, utils
 from typing import Dict, Generator, Optional, Iterator, List
-from helper import  get_row_iterator
+from tap_s3_csv.helper import  get_row_iterator
 
 LOGGER = get_logger('tap_s3_csv')
 
