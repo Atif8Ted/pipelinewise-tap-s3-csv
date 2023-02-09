@@ -2,6 +2,9 @@ import codecs
 import csv
 
 SDC_EXTRA_COLUMN = "_sdc_extra"
+from singer.logger import get_logger
+
+LOGGER = get_logger("tap_s3_csv")
 
 
 def get_row_iterator(iterable, options=None):
@@ -12,9 +15,10 @@ def get_row_iterator(iterable, options=None):
     file_stream = codecs.iterdecode(iterable, encoding="utf-8")
 
     # Replace any NULL bytes in the line given to the DictReader
-    for line in file_stream:
-        print("***************")
-        print(line)
+    # Replace any NULL bytes in the line given to the DictReader
+    LOGGER.info("***************")
+    LOGGER.info(file_stream)
+    LOGGER.info(iterable)
     reader = csv.DictReader(
         (line.replace("\0", "") for line in file_stream),
         fieldnames=None,
